@@ -5,12 +5,12 @@ const Pricing = () => {
     const pricingOptions = [
         {
             id: 1, name: 'Free', price: 0, benefits: [
-                'local deals', 'nibba', 'deal'
+                'local deals', 'nibba', 'deal', 'surprise ending'
             ]
         },
         {
             id: 2, name: 'Regular', price: 999, benefits: [
-                'local deals', 'nibba special', 'super deal'
+                'local deals', 'nibba special', 'super deal', 'maybe happy ending'
             ]
         },
         {
