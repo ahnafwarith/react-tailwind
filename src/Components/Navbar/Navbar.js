@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Pinku from '../PinkuLinku/Pinku';
-import { MenuIcon } from '@heroicons/react/solid'
+import { MenuIcon, XIcon } from '@heroicons/react/solid'
 
 const Navbar = () => {
+    /* const [open, setOpen] = useState(false); */
+    const [close, handleMenu] = useState(true)
     const nav = [
         { name: 'Home', id: 1, link: '/home' },
         { name: 'Order', id: 2, link: '/order' },
@@ -11,10 +13,13 @@ const Navbar = () => {
     ]
     return (
         <nav>
-            <div className='md:hidden h-6 w-6'>
-                <MenuIcon></MenuIcon>
+            {/* <div onClick={() => setOpen(!open)} className='md:hidden h-6 w-6'>
+                {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
+            </div> */}
+            <div onClick={() => handleMenu(!close)} className='w-6 h-6 md:hidden'>
+                {close ? <MenuIcon></MenuIcon> : <XIcon></XIcon>}
             </div>
-            <ul className='md:flex justify-center'>
+            <ul className={`md:flex justify-center absolute duration-500 ease-in ${close ? 'top-[-120px]' : 'top-6'}`}>
                 {
                     nav.map(link => <Pinku id={link.id} link={link}></Pinku>)
                 }
