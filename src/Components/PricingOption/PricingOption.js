@@ -1,4 +1,5 @@
 import React from 'react';
+import Benefit from '../Benefit/Benefit';
 
 const PricingOption = (props) => {
     const { name, price } = props.pricingOption
@@ -9,6 +10,10 @@ const PricingOption = (props) => {
                 <span className='text-4xl font-bold'>{price}</span>
                 <span className='text-gray-500'>/mo</span>
             </p>
+            <div>
+                <h3 className='text-xl text-left'>Benefits: </h3>
+                {props.pricingOption.benefits.map(benefit => <Benefit benefit={benefit}></Benefit>)}
+            </div>
         </div>
     );
 };
